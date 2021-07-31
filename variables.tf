@@ -14,21 +14,21 @@ variable "vpc_cidr" {
 }
 
 variable "public_subnet" {
-  type = map(string)
+  type = map(number)
   description = "Map of AZ to a string that should be used for public subnet"
   default = {
-    "public-subnet-2a" = "2a"
-    "public-subnet-2b" = "2b"
-    "public-subnet-2c" = "2c"
+    "public-subnet-2a" = 1
+    "public-subnet-2b" = 2
+    "public-subnet-2c" = 3
   }
 }
 
 variable "private_subnet" {
-  type = map(string)
+  type = map(number)
   description = "Map of AZ to a string that should be used for private subnet"
   default = {
-    "private-subnet-2a" = "2a"
-    "private-subnet-2b" = "2b"
-    "private-subnet-2c" = "2c"
+    "private-subnet-2a" = 4
+    "private-subnet-2b" = 5
+    "private-subnet-2c" = 6
   }
 }
