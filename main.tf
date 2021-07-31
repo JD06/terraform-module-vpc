@@ -15,7 +15,7 @@ resource "aws_vpc" "vpc" {
 resource "aws_subnet" "public" {
   for_each = var.public_subnet
   map_public_ip_on_launch = "true"
-  cidr_block = cidrsubnet(aws_vpc.vpc.cidr_block, 4, each.key )
+  cidr_block = cidrsubnet(aws_vpc.vpc.cidr_block, 4 )
   vpc_id = aws_vpc.vpc.id
 
   tags = {
@@ -29,7 +29,7 @@ resource "aws_subnet" "public" {
 resource "aws_subnet" "private" {
   for_each = var.private_subnet
   map_public_ip_on_launch = "false"
-  cidr_block = cidrsubnet(aws_vpc.vpc.cidr_block, 4, each.key )
+  cidr_block = cidrsubnet(aws_vpc.vpc.cidr_block, 4 )
   vpc_id = aws_vpc.vpc.id
 
   tags = {
