@@ -22,7 +22,7 @@ resource "aws_subnet" "public" {
     Name      = "${var.name}-${var.infra_env}-${each.key}"
     Environment     = var.infra_env
     ManagedBy       = "terraform"
-    Subnet          = "${each.key}-${each.value}"
+    Subnet          = "${each.key}"
   }
 }
 
@@ -36,6 +36,6 @@ resource "aws_subnet" "private" {
     Name      = "${var.name}-${var.infra_env}-${each.key}"
     Environment     = var.infra_env
     ManagedBy       = "terraform"
-    Subnet          = "${each.key}-${each.value}"
+    Subnet          = "${each.key}"
   }
 }
